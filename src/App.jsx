@@ -54,9 +54,9 @@ function Example() {
     const { isPending, error, data } = useQuery({
         queryKey: ['repoData'],
         queryFn: () =>
-            fetch(
-                'https://api.github.com/repos/facebook/react/stats/commit_activity',
-            ).then((res) => res.json()),
+            fetch('https://api.github.com/repos/mdn/content/stats/commit_activity').then(
+                (res) => res.json(),
+            ),
     });
 
     if (isPending) return 'Loading...';
